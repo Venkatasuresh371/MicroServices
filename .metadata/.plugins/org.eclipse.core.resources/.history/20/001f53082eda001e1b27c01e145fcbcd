@@ -1,0 +1,9 @@
+package com.org.OrderServiceMS.request;
+
+public class OrderRequest {
+
+	public OrderRequest() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

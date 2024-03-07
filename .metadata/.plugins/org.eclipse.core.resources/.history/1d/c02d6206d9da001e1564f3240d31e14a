@@ -1,0 +1,27 @@
+package com.org.Department_MS.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.org.Department_MS.entity.request.DepartmentRequest;
+import com.org.Department_MS.response.DepartmentResponse;
+import com.org.Department_MS.service.DepartmentService;
+
+@Service
+public class DepartmentServiceImpl implements DepartmentService
+{
+
+	@Override
+	public DepartmentResponse saveDepartment(DepartmentRequest departmentRequest)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DepartmentResponse getDepartmentById(Long deptId)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

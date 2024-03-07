@@ -1,0 +1,9 @@
+package com.org.PaymentServiceMS.entity;
+
+public class PaymentDetails {
+
+	public PaymentDetails() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

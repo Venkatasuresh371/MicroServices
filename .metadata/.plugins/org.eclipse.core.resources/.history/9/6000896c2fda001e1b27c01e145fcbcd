@@ -1,0 +1,9 @@
+package com.org.PaymentServiceMS.response;
+
+public class PaymentResponse {
+
+	public PaymentResponse() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

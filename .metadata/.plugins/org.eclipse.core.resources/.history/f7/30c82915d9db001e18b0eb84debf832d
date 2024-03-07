@@ -1,0 +1,14 @@
+package com.org.customerservice.service;
+
+import com.org.customerservice.request.CustomerRequest;
+import com.org.customerservice.response.CustomerResponse;
+
+public interface CustomerService
+{
+	public CustomerResponse saveCustomer(CustomerRequest customerRequest);
+	
+	public CustomerResponse getCustomer(int cid);
+	
+	public String deleteCustomer(int cid);
+
+}

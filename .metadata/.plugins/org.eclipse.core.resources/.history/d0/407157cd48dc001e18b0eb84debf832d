@@ -1,0 +1,103 @@
+package com.org.mappingdemo.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.org.mappingdemo.model.Customer;
+import com.org.mappingdemo.model.Order;
+import com.org.mappingdemo.repository.CustomerRepository;
+import com.org.mappingdemo.request.CustomerRequest;
+import com.org.mappingdemo.request.OrderRequest;
+import com.org.mappingdemo.response.CustomerResponse;
+import com.org.mappingdemo.response.OrderResponse;
+import com.org.mappingdemo.service.CustomerService;
+
+@Service
+public class CustomerServiceImpl implements CustomerService 
+{
+	@Autowired
+	private CustomerRepository customerRepo;
+	
+	@Override
+	public CustomerResponse saveCustomer(CustomerRequest customerRequest) 
+	{
+		Customer customer = constructCustomer(customerRequest);
+		System.out.println("customer --> "+customer);
+		Customer savedCustomer = customerRepo.save(customer);
+		System.out.println("savedCustomer --> "+savedCustomer);
+		CustomerResponse customerResponse = constructCustomerResponse(savedCustomer);
+		System.out.println("customerResponse --> "+customerResponse);
+		return customerResponse;
+	}
+
+	private CustomerResponse constructCustomerResponse(Customer customer) 
+	{
+		CustomerResponse customerResponse = new CustomerResponse();
+		customerResponse.setCustomerid(customer.getCustomerId());
+		customerResponse.setCustomerName(customer.getCustomerName());
+		customerResponse.setContactNo(customer.getContactNo());
+		
+		List<OrderResponse> list = new ArrayList<OrderResponse>();
+		for(Order order : customer.getOrders()) {
+			OrderResponse orderResponse = new OrderResponse();
+			orderResponse.setOrderId(order.getOrderId());
+			orderResponse.setoDetails(order.getDetails());
+			orderResponse.setPrice(order.getPrice());
+			list.add(orderResponse);
+		}
+		customerResponse.setOrders(list);
+		return customerResponse;
+	}
+
+	private Customer constructCustomer(CustomerRequest customerRequest) 
+	{
+		Customer customer = new Customer();
+		customer.setCustomerName(customerRequest.getCustomerName());
+		customer.setContactNo(customerRequest.getConatactNo());
+		
+		List<Order> orderList = new ArrayList<Order>();		
+		for (OrderRequest o : customerRequest.getOrders()) {
+			Order order = new Order();
+			order.setDetails(o.getDetails());
+			order.setPrice(o.getPrice());
+			orderList.add(order);
+		}
+		customer.setOrders(orderList);
+		return customer;
+	}
+
+	@Override
+	public CustomerResponse getCustomer(int customerId) 
+	{
+		Customer customer = customerRepo.findById(customerId).get();
+		CustomerResponse customerResponse = new CustomerResponse();
+		BeanUtils.copyProperties(customer, customerResponse);
+		return customerResponse;
+	}
+
+	@Override
+	public String deleteCustomer(int cid) 
+	{
+		Customer customer = customerRepo.findById(cid).get();
+		customerRepo.delete(customer);
+		return "Customer Deleted Successfully";
+	}
+
+	@Override
+	public List<CustomerResponse> getAllCstomers() 
+	{
+		List<Customer> customersList = customerRepo.findAll();
+		CustomerResponse customerResponse = new CustomerResponse();
+		List<CustomerResponse> customerResponseList = new ArrayList<CustomerResponse>();
+		for (Customer customer : customersList)
+		{
+			BeanUtils.copyProperties(customer, customerResponse);
+			customerResponseList.add(customerResponse);
+		}
+		return customerResponseList;
+	}
+}

@@ -1,0 +1,14 @@
+package com.org.OrderServiceMS.entity;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Order 
+{
+	
+	public Order() 
+	{
+		super();
+	}
+
+}

@@ -1,0 +1,53 @@
+package com.org.Student_MS.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+
+import com.org.Student_MS.entity.Student;
+import com.org.Student_MS.repository.StudentRepository;
+import com.org.Student_MS.request.StudentRequest;
+import com.org.Student_MS.response.DepartmentResponse;
+import com.org.Student_MS.response.StudentDto;
+import com.org.Student_MS.response.StudentResponse;
+import com.org.Student_MS.service.APIClient;
+import com.org.Student_MS.service.StudentService;
+
+public class StudentServiceImpl implements StudentService
+{
+	@Autowired
+	private StudentRepository studentRepo;
+	
+	@Autowired
+	private APIClient apiClient;
+	
+	@Override
+	public Student saveStudent(StudentRequest stdRequest) 
+	{
+		Student student = new Student();
+		student.setDeptId(stdRequest.getDeptId());
+		student.setFirstName(stdRequest.getFirstName());
+		student.setLastName(stdRequest.getLastName());
+		student.setEmail(stdRequest.getEmail());
+		Student savedStudent = studentRepo.save(student);
+		return savedStudent;
+	}
+
+	@Override
+	public StudentResponse getStudent(Long stdId)
+	{
+		Student student = studentRepo.findById(stdId).get();
+		
+		StudentRequest stdrequest = new StudentRequest();
+		DepartmentResponse departmentResponse = apiClient.getDepartment(stdrequest.getDeptId()).getBody();
+		
+		StudentDto studentDto = new StudentDto();
+		studentDto.setFirstName(student.getFirstName());
+		studentDto.setLastName(student.getLastName());
+		studentDto.setEmail(student.getEmail());
+		
+		StudentResponse studentResponse = new StudentResponse();
+		studentResponse.setStdDto(studentDto);
+		studentResponse.setDeptResponse(departmentResponse);
+		return studentResponse;
+	}
+}

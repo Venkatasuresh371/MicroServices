@@ -1,0 +1,15 @@
+package com.org.PaymentServiceMS.response;
+
+import java.time.LocalDate;
+
+public class PaymentResponse 
+{
+
+	private long paymentId;
+	private String status;
+	private String paymentMode;
+	private long amount;
+	private LocalDate paymentDate;
+	private long orderId;
+
+}

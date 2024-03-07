@@ -1,0 +1,11 @@
+package com.org.OrderServiceMS.service;
+
+import com.org.OrderServiceMS.request.OrderRequest;
+import com.org.OrderServiceMS.response.OrderResponse;
+
+public interface OrderService 
+{
+	long placeOrder(OrderRequest orderRequest);
+
+    OrderResponse getOrderDetails(int orderId);
+}

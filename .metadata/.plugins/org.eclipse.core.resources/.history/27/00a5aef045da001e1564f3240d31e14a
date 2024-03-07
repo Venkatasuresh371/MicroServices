@@ -1,0 +1,47 @@
+package com.org.OrderServiceMS.request;
+
+public class PaymentRequest 
+{
+	private int orderId;
+	private long amount;
+	private String referenceNumber;
+	private String paymentMode;
+	
+	public PaymentRequest() {
+		super();
+	}
+
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+
+	public long getAmount() {
+		return amount;
+	}
+
+	public void setAmount(long amount) {
+		this.amount = amount;
+	}
+
+	public String getReferenceNumber() {
+		return referenceNumber;
+	}
+
+	public void setReferenceNumber(String referenceNumber) {
+		this.referenceNumber = referenceNumber;
+	}
+
+	public String getPaymentMode() {
+		return paymentMode;
+	}
+
+	public void setPaymentMode(String paymentMode) {
+		this.paymentMode = paymentMode;
+	}
+
+	
+}

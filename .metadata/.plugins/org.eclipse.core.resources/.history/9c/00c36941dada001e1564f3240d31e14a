@@ -1,0 +1,5 @@
+package com.org.Student_MS.entity;
+
+public class Student {
+
+}

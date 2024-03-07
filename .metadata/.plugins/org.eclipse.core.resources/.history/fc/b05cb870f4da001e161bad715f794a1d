@@ -1,0 +1,20 @@
+package com.org.Student_MS.response;
+
+public class StudentResponse
+{
+	private StudentDto stdDto;
+	private DepartmentDto deptDto;
+	
+	public StudentDto getStdDto() {
+		return stdDto;
+	}
+	public void setStdDto(StudentDto stdDto) {
+		this.stdDto = stdDto;
+	}
+	public DepartmentDto getDeptDto() {
+		return deptDto;
+	}
+	public void setDeptDto(DepartmentDto deptDto) {
+		this.deptDto = deptDto;
+	}	
+}

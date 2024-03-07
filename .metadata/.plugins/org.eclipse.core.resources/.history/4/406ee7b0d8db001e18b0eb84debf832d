@@ -1,0 +1,31 @@
+package com.org.mappingdemo.request;
+
+import java.util.List;
+
+public class CustomerRequest 
+{
+	private String customerName;
+	private String conatactNo;
+	private List<OrderRequest> orders;
+	
+	public String getCustomerName() {
+		return customerName;
+	}
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+	public String getConatactNo() {
+		return conatactNo;
+	}
+	public void setConatactNo(String conatactNo) {
+		this.conatactNo = conatactNo;
+	}
+	public List<OrderRequest> getOrders() {
+		return orders;
+	}
+	public void setOrders(List<OrderRequest> orders) {
+		this.orders = orders;
+	}
+
+	
+}

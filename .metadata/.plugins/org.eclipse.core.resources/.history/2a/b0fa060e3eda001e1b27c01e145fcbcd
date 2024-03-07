@@ -1,0 +1,9 @@
+package com.org.OrderServiceMS;
+
+public class OrderResponse {
+
+	public OrderResponse() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

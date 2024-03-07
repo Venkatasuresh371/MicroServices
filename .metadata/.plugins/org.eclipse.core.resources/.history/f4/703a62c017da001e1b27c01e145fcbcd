@@ -1,0 +1,9 @@
+package com.org.ProductServiceMS.response;
+
+public class ProductResponse {
+
+	public ProductResponse() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

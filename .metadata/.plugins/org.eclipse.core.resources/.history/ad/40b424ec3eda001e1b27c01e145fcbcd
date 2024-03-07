@@ -1,0 +1,5 @@
+package com.org.OrderServiceMS.service;
+
+public interface OrderService {
+
+}

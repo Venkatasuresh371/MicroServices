@@ -1,0 +1,5 @@
+package com.org.Department_MS.service.impl;
+
+public class DepartmentServiceImpl {
+
+}

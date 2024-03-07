@@ -1,0 +1,5 @@
+package com.org.OrderServiceMS.repository;
+
+public interface OrderRepository {
+
+}

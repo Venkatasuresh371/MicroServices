@@ -1,0 +1,12 @@
+package com.org.mappingdemo.request;
+
+import java.util.List;
+
+public class CustomerRequest 
+{
+	private String customerName;
+	private String conatactNo;
+	private List<OrderRequest> orders;
+
+	
+}

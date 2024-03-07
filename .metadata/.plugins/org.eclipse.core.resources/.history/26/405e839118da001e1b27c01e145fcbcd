@@ -1,0 +1,5 @@
+package com.org.ProductServiceMS.service.impl;
+
+public class ProductServiceImpl {
+
+}

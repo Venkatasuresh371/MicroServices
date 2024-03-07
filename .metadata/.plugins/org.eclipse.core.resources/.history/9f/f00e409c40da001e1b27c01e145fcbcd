@@ -1,0 +1,9 @@
+package com.org.OrderServiceMS.service.impl;
+
+public class OrderServiceImpl {
+
+	public OrderServiceImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

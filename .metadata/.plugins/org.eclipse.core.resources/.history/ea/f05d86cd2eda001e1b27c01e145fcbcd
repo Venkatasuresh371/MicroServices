@@ -1,0 +1,9 @@
+package com.org.PaymentServiceMS;
+
+public class PaymentRequest {
+
+	public PaymentRequest() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,77 @@
+package com.org.ProductServiceMS.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.org.ProductServiceMS.entity.Product;
+import com.org.ProductServiceMS.repository.ProductRepository;
+import com.org.ProductServiceMS.request.ProductRequest;
+import com.org.ProductServiceMS.response.ProductResponse;
+import com.org.ProductServiceMS.service.ProductService;
+
+@Service
+public class ProductServiceImpl implements ProductService 
+{
+	@Autowired
+	private ProductRepository repository;
+	
+	@Override
+	public ProductResponse saveProduct(ProductRequest productRequest)
+	{
+		Product product = constructProduct(productRequest);
+		Product savedProduct = repository.save(product);
+		ProductResponse productResponse = constructProducResponse(savedProduct);
+		return productResponse;
+	}
+
+	private Product constructProduct(ProductRequest productRequest)
+	{
+		Product product = new Product();
+		product.setName(productRequest.getName());
+		product.setPrice(productRequest.getPrice());
+		product.setQuantity(productRequest.getQuantity());
+		return product;
+	}
+	
+	private ProductResponse constructProducResponse(Product product)
+	{
+		ProductResponse productResponse = new ProductResponse();
+		productResponse.setName(product.getName());
+		productResponse.setPrice(product.getPrice());
+		productResponse.setQuantity(product.getQuantity());
+		return productResponse;
+	}
+
+	@Override
+	public List<ProductResponse> getAllProducts()
+	{
+		List<ProductResponse> producResponseList = new ArrayList<ProductResponse>();
+		List<Product> productList = repository.findAll();
+		for (Product product : productList) 
+		{
+			ProductResponse producResponse = constructProducResponse(product);
+			producResponseList.add(producResponse);
+		}
+		return producResponseList;
+	}
+
+	@Override
+	public ProductResponse getProductById(int productId)
+	{
+		
+		Product product = repository.findById(productId).orElse(null);
+		ProductResponse productResponse = constructProducResponse(product);
+		return productResponse;
+	}
+
+	@Override
+	public String deleteProduct(int productId)
+	{
+		repository.findById(productId).orElse(null);
+		return "Product Deleted Successfully";
+	}
+}

@@ -1,0 +1,5 @@
+package com.org.PaymentServiceMS.repository;
+
+public interface PaymentRepository {
+
+}

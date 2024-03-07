@@ -1,0 +1,31 @@
+package com.org.customerservice.request;
+
+import java.util.List;
+
+import com.org.customerservice.response.OrderResponse;
+
+public class CustomerRequest
+{
+	private String cName;
+	private String conatactNo;
+	private List<OrderRequest> orders;
+	
+		public String getcName() {
+		return cName;
+	}
+	public void setcName(String cName) {
+		this.cName = cName;
+	}
+	public String getConatactNo() {
+		return conatactNo;
+	}
+	public void setConatactNo(String conatactNo) {
+		this.conatactNo = conatactNo;
+	}
+	public List<OrderRequest> getOrders() {
+		return orders;
+	}
+	public void setOrders(List<OrderRequest> orders) {
+		this.orders = orders;
+	}
+}

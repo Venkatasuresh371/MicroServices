@@ -1,0 +1,47 @@
+package com.org.OrderServiceMS.response;
+
+import java.time.LocalDate;
+
+public class OrderResponse 
+{
+	private int orderId;
+	private LocalDate orderDate;
+	private String orderStatus;
+	private long amount;
+	
+	public OrderResponse() {
+		super();
+	}
+
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+
+	public LocalDate getOrderDate() {
+		return orderDate;
+	}
+
+	public void setOrderDate(LocalDate orderDate) {
+		this.orderDate = orderDate;
+	}
+
+	public String getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
+	public long getAmount() {
+		return amount;
+	}
+
+	public void setAmount(long amount) {
+		this.amount = amount;
+	}
+}

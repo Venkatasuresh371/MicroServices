@@ -1,0 +1,9 @@
+package com.org.Student_MS.response;
+
+public class DepartmentDto 
+{
+	private Long deptId;
+    private String deptName;
+    private String deptAddress;
+    private String deptCode;
+}

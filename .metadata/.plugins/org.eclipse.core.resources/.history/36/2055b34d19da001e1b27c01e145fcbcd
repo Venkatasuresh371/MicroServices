@@ -1,0 +1,18 @@
+package com.org.ProductServiceMS.service;
+
+import java.util.List;
+
+import com.org.ProductServiceMS.request.ProductRequest;
+import com.org.ProductServiceMS.response.ProductResponse;
+
+public interface ProductService
+{
+	public ProductResponse saveProduct(ProductRequest productRequest);
+	
+	public List<ProductResponse> getAllProducts();
+	
+	public ProductResponse getProductById(int pid);
+	
+	public String deleteProduct(int id);
+
+}

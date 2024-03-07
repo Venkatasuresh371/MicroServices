@@ -1,0 +1,10 @@
+
+server.port = 8081
+spring.application.name = DEPARTMENT_SERVICE
+spring.datasource.url = jdbc:mysql://localhost:3306/microservices_db
+spring.datasource.username = root
+spring.datasource.password = mysql
+
+spring.jpa.show-sql = true
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.properties.hibernate.format_sql = true

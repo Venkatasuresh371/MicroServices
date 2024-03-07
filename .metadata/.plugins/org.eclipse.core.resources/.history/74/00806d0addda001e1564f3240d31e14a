@@ -1,0 +1,11 @@
+package com.org.Student_MS.service;
+
+import com.org.Student_MS.entity.Student;
+import com.org.Student_MS.response.StudentResponse;
+
+public interface StudentService
+{
+	Student saveStudent(Student student);
+
+    StudentResponse  getStudent(Long stdId);
+}

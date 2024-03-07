@@ -1,0 +1,47 @@
+package com.org.customerservice.response;
+
+import java.util.List;
+
+public class CustomerResponse 
+{
+	private int cid;
+	private String cName;
+	private String contactNo;
+	private List<OrderResponse> orders;
+	
+	public CustomerResponse() {
+		super();
+	}
+
+	public int getCid() {
+		return cid;
+	}
+
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
+
+	public String getcName() {
+		return cName;
+	}
+
+	public void setcName(String cName) {
+		this.cName = cName;
+	}
+
+	public String getContactNo() {
+		return contactNo;
+	}
+
+	public void setContactNo(String contactNo) {
+		this.contactNo = contactNo;
+	}
+
+	public List<OrderResponse> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<OrderResponse> orders) {
+		this.orders = orders;
+	}
+}

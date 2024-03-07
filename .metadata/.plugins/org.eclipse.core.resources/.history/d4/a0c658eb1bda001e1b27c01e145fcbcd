@@ -1,0 +1,45 @@
+package com.org.ProductServiceMS.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.org.ProductServiceMS.request.ProductRequest;
+import com.org.ProductServiceMS.response.ProductResponse;
+import com.org.ProductServiceMS.service.ProductService;
+
+@RestController
+public class ProductController
+{
+	@Autowired
+	private ProductService productServie;
+	
+	public ResponseEntity<ProductResponse> addProduct(@RequestBody ProductRequest productRequest)
+	{
+		ProductResponse productResponse = productServie.saveProduct(productRequest);
+		return new ResponseEntity<ProductResponse>(productResponse,HttpStatus.CREATED);
+	}
+	
+	public ResponseEntity<List<ProductResponse>> getAllProducts()
+	{
+		List<ProductResponse> allProducts = productServie.getAllProducts();
+		return new ResponseEntity<ProductResponse>(allProducts,HttpStatus.OK);
+	}
+	
+	public ResponseEntity<ProductResponse> getProduct(@PathVariable int productId)
+	{
+		ProductResponse productResponse = productServie.saveProduct(productRequest);
+		return new ResponseEntity<ProductResponse>(productResponse,HttpStatus.CREATED);
+	}
+	public ResponseEntity<ProductResponse> deleteProduct(@PathVariable int productId)
+	{
+		ProductResponse productResponse = productServie.saveProduct(productRequest);
+		return new ResponseEntity<ProductResponse>(productResponse,HttpStatus.CREATED);
+	}
+	
+}

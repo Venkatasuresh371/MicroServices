@@ -1,0 +1,12 @@
+package com.org.PaymentServiceMS.service;
+
+import com.org.PaymentServiceMS.request.PaymentRequest;
+import com.org.PaymentServiceMS.response.PaymentResponse;
+
+public interface PaymentService
+{
+	int doPayment(PaymentRequest paymentRequest);
+
+    PaymentResponse getPaymentDetailsByOrderId(long orderId);
+
+}

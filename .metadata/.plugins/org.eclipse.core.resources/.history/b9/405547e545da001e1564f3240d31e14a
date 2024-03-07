@@ -1,0 +1,54 @@
+package com.org.OrderServiceMS.service.impl;
+
+import java.time.LocalDate;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.org.OrderServiceMS.entity.Order;
+import com.org.OrderServiceMS.repository.OrderRepository;
+import com.org.OrderServiceMS.request.OrderRequest;
+import com.org.OrderServiceMS.request.PaymentRequest;
+import com.org.OrderServiceMS.response.OrderResponse;
+import com.org.OrderServiceMS.service.OrderService;
+
+@Service
+public class OrderServiceImpl implements OrderService
+{
+	@Autowired
+	private OrderRepository orderRepo;
+	@Override
+	public int placeOrder(OrderRequest orderRequest)
+	{
+		Order order = new Order();
+		order.setProductId(orderRequest.getProductId());
+		order.setQuantity(orderRequest.getQuantity());
+		order.setAmount(orderRequest.getAmount());
+		order.setOrderDate(LocalDate.now());
+		order.setOrderStatus("PLACED");
+		order.setQuantity(orderRequest.getQuantity());
+		orderRepo.save(order);
+		
+		OrderResponse orderResponse = new OrderResponse();
+		orderResponse.setOrderId(order.getOrderId());
+		orderResponse.setAmount(order.getAmount());
+		orderResponse.setOrderDate(order.getOrderDate());
+		orderResponse.setOrderStatus(order.getOrderStatus());
+		
+		return orderResponse.getOrderId();
+	}
+
+	@Override
+	public OrderResponse getOrderDetails(int orderId)
+	{
+		Order order = orderRepo.findById(orderId).get();
+		
+		OrderResponse orderResponse = new OrderResponse();
+		orderResponse.setAmount(order.getAmount());
+		orderResponse.setOrderDate(order.getOrderDate());
+		orderResponse.setOrderStatus(order.getOrderStatus());
+		
+		return orderResponse;
+	}
+	
+}

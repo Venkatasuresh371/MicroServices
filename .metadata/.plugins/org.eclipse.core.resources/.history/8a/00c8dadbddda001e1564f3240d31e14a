@@ -1,0 +1,26 @@
+package com.org.Student_MS.service.impl;
+
+import com.org.Student_MS.entity.Student;
+import com.org.Student_MS.request.StudentRequest;
+import com.org.Student_MS.response.StudentResponse;
+import com.org.Student_MS.service.StudentService;
+
+public class StudentServiceImpl implements StudentService
+{
+	@Override
+	public StudentResponse saveStudent(StudentRequest stdRequest) 
+	{
+		Student student = new Student();
+		student.setDeptId(stdRequest.getDeptId());
+		student.setFirstName(stdRequest.getFirstName());
+		student.setLastName(stdRequest.getLastName());
+		student.setEmail(stdRequest.getEmail());
+		return null;
+	}
+
+	@Override
+	public StudentResponse getStudent(Long stdId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

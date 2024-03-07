@@ -1,0 +1,9 @@
+package com.org.PaymentServiceMS.service.impl;
+
+public class PaymentServiceImpl {
+
+	public PaymentServiceImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

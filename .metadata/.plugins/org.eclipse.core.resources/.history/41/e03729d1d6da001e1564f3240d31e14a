@@ -1,0 +1,5 @@
+package com.org.Department_MS.entity.request;
+
+public class DepartmentRequest {
+
+}

@@ -1,0 +1,54 @@
+package com.org.OrderServiceMS.response;
+
+import java.time.LocalDate;
+
+public class PaymentResponse 
+{
+	private int paymentId;
+	private String status;
+	private String paymentMode;
+	private long amount;
+	private LocalDate paymentDate;
+	private int orderId;
+	
+	public PaymentResponse() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public int getPaymentId() {
+		return paymentId;
+	}
+	public void setPaymentId(int paymentId) {
+		this.paymentId = paymentId;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getPaymentMode() {
+		return paymentMode;
+	}
+	public void setPaymentMode(String paymentMode) {
+		this.paymentMode = paymentMode;
+	}
+	public long getAmount() {
+		return amount;
+	}
+	public void setAmount(long amount) {
+		this.amount = amount;
+	}
+	public LocalDate getPaymentDate() {
+		return paymentDate;
+	}
+	public void setPaymentDate(LocalDate paymentDate) {
+		this.paymentDate = paymentDate;
+	}
+	public int getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+}

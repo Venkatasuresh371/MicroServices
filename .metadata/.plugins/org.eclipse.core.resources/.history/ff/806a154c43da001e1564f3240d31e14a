@@ -1,0 +1,46 @@
+package com.org.OrderServiceMS.request;
+
+public class OrderRequest 
+{
+	private long productId;
+	private long amount;
+	private int quantity;
+	private String paymentMode;
+	
+	public OrderRequest() 
+	{
+		super();
+	}
+
+	public long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(long productId) {
+		this.productId = productId;
+	}
+
+	public long getAmount() {
+		return amount;
+	}
+
+	public void setAmount(long amount) {
+		this.amount = amount;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public String getPaymentMode() {
+		return paymentMode;
+	}
+
+	public void setPaymentMode(String paymentMode) {
+		this.paymentMode = paymentMode;
+	}
+}

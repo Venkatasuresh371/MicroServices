@@ -1,0 +1,13 @@
+package com.org.mappingdemo.response;
+
+public class OrderResponse
+{
+	private int orderId;
+	private String oDetails;
+	private int price;
+	
+	public OrderResponse() {
+		super();
+	}
+	
+}

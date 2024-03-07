@@ -1,0 +1,14 @@
+package com.org.mappingdemo.service;
+
+import com.org.mappingdemo.request.CustomerRequest;
+import com.org.mappingdemo.response.CustomerResponse;
+
+public interface CustomerService
+{
+	public CustomerResponse saveCustomer(CustomerRequest customerRequest);
+	
+	public CustomerResponse getCustomer(int cid);
+	
+	public String deleteCustomer(int cid);
+
+}

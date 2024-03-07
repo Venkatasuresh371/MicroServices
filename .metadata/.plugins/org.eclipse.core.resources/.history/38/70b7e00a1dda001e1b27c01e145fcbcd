@@ -1,0 +1,9 @@
+package com.org.OrderServiceMS.entity;
+
+public class Order {
+
+	public Order() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

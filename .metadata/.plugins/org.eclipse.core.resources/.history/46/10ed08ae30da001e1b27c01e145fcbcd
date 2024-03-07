@@ -1,0 +1,5 @@
+package com.org.PaymentServiceMS.service;
+
+public interface PaymentService {
+
+}

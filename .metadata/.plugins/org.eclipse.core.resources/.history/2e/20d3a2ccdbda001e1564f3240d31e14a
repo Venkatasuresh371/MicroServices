@@ -1,0 +1,10 @@
+package com.org.Student_MS.response;
+
+public class StudentDto
+{
+	private Long stdId;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String deptId;
+}

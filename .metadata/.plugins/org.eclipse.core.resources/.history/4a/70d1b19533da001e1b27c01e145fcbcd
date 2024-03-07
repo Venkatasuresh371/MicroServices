@@ -1,0 +1,48 @@
+package com.org.PaymentServiceMS.service.impl;
+
+import java.time.LocalDate;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.org.PaymentServiceMS.entity.PaymentDetails;
+import com.org.PaymentServiceMS.repository.PaymentRepository;
+import com.org.PaymentServiceMS.request.PaymentRequest;
+import com.org.PaymentServiceMS.response.PaymentResponse;
+import com.org.PaymentServiceMS.service.PaymentService;
+
+@Service
+public class PaymentServiceImpl implements PaymentService
+{
+	@Autowired
+	private PaymentRepository paymentRepo;
+	
+	@Override
+	public int doPayment(PaymentRequest paymentRequest)
+	{
+		PaymentDetails paymentDetails = new PaymentDetails();
+		paymentDetails.setOrderId(paymentRequest.getOrderId());
+		paymentDetails.setPaymentDate(LocalDate.now());
+		paymentDetails.setPaymentMode(paymentRequest.getPaymentMode());
+		paymentDetails.setPaymentStatus("SUCCESS");
+		paymentDetails.setReferenceNumber(paymentRequest.getReferenceNumber());
+		paymentDetails.setAmount(paymentRequest.getAmount());
+		
+		PaymentDetails details = paymentRepo.save(paymentDetails);
+		return details.getPaymentId();
+	}
+	@Override
+	public PaymentResponse getPaymentDetailsByOrderId(int orderId)
+	{
+		PaymentDetails paymentDetails = paymentRepo.findById(orderId).get();
+		PaymentResponse paymentResponse = new PaymentResponse();
+		
+		paymentResponse.setPaymentId(paymentDetails.getPaymentId());
+		
+		return paymentResponse;
+	}
+
+	
+
+	
+}

@@ -1,0 +1,9 @@
+package com.org.ProductServiceMS.request;
+
+public class ProductRequest {
+
+	public ProductRequest() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

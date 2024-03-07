@@ -1,0 +1,5 @@
+package com.org.Student_MS.repository;
+
+public interface StudentRepository {
+
+}

@@ -1,0 +1,8 @@
+package com.org.OrderServiceMS.service;
+
+import com.org.OrderServiceMS.request.OrderRequest;
+import com.org.OrderServiceMS.response.OrderResponse;
+
+public interface OrderService 
+{
+}
